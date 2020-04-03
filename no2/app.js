@@ -13,7 +13,8 @@ new Vue({
 		amount: 0,
 		from: "EUR",
 		to: "USD",
-		result: 0
+		result: 0,
+		loading: false
 	},
 	computed: {
 		formattedCurrencies() {
@@ -23,7 +24,7 @@ new Vue({
       return (Number(this.amount) *this.result).toFixed(3); 
 		},
 		disabled(){
-			return this.amount === 0;
+			return this.amount === 0 || !this.amount || this.loading;
 		}
 	},
 	mounted() {
@@ -51,13 +52,24 @@ new Vue({
 		},
 		convertCurrency() {
 			const key = `${this.from}_${this.to}`;
+			this.loading = true;
 			axios
 				.get(`https://free.currconv.com/api/v7/convert?q=${key}&compact=ultra&apiKey=eeb1166f13fc023f1cbe`)
 				.then(response => {
+					this.loading = false;
 					console.log(response);
 					console.log(response.data[key]);
 					this.result = response.data[key];
 				});
+		}
+	},
+	// watch để check nếu có sự thay đổi của biến from và to thì sẽ reset kết quả về 0
+	watch:{
+		from(){
+			this.result = 0;
+		},
+		to(){
+			this.result = 0;
 		}
 	}
 });
