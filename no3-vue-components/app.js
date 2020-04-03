@@ -18,7 +18,7 @@ Vue.component("blog", {
         
         <div class="text-center text-muted display-4">{{ claps }}</div>
 
-        <button @click="claps++"class="btn btn-info btn-sm">Clap for Me</button> 
+        <button @click="clapForArticle"class="btn btn-info btn-sm">Clap for Me</button> 
         <button @click="deleteArticle"class="btn btn-danger btn-sm">Delete Me</button> 
 
       </div>
@@ -30,7 +30,7 @@ Vue.component("blog", {
     methods:{
       deleteArticle(){
         // console.log("article is deleted");
-        this.$emit('delete-article', this.title) //đẩy ra v-on ở html dùng hàm khác xử lý ở app
+        this.$emit('delete-article', this.title, this.claps) //đẩy ra v-on ở html dùng hàm khác xử lý ở app
       },
       clapForArticle(){
         this.claps++
