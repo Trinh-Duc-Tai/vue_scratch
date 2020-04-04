@@ -25,26 +25,36 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 🎉  Successfully created project community-blog.
 👉  Get started with the following commands:
+```
+ cd community-blog
+ ```
 
- $ cd community-blog
- $ npm run serve
+ ```
+ npm run serve
+ ```
 ----------------------------------------------
+```
  npm install axios == yarn add axios
+ ```
 -----------------------------------------------
-
+```
+npm install --save vue-router
+```
 <!-- them fa-spin để quay như thật  -->
 <i class="fas fa-spin fa-spinner" v-if="loading"></i> 
 
 ### mode: 'history', //để ko hiện # ở link http://localhost:8080/#/login
-
+```
 tk test: vi102@gmail.com
 mk test: vi102
 tk test: taitd@gmail.com
 mk test: taitd
+```
 ---------------------------------------------------------------
 ### search vue noty xem để add toast notification https://github.com/renoguyon/vuejs-noty
->npm install vuejs-noty
-
+```
+npm install vuejs-noty
+```
 // add noty css 
 ### import 'vuejs-noty/dist/vuejs-noty.css'
 
@@ -71,12 +81,15 @@ có 1 đoạn dòng này khác video 16
 ### https://disqus.com/   //react
 
 ### search vue disqus   https://github.com/ktquez/vue-disqus
+```
+npm install disqus
+```
+```
+npm install --save vue-disqus
+```
 
->npm install disqus
->npm install --save vue-disqus
-
-import Vue from 'vue'
-import VueDisqus from 'vue-disqus'
+>import Vue from 'vue'
+>import VueDisqus from 'vue-disqus'
 >cái này để có phần bình luận
 # Vue.use(VueDisqus)
 >link này tùy từng người: 
@@ -85,7 +98,9 @@ import VueDisqus from 'vue-disqus'
 Không thể sử dụng v-if with v-for ở Home.vue video 21
 ---------------------------------------
 # search vue wysiwyg  https://github.com/chmln/vue-wysiwyg
->npm install vue-wysiwyg --save
+```
+npm install vue-wysiwyg --save
+```
 
 > import wysiwyg from "vue-wysiwyg";
 > Vue.use(wysiwyg, {});
@@ -93,7 +108,9 @@ Không thể sử dụng v-if with v-for ở Home.vue video 21
 
 ------------------------------------------------
 # search "vue picture input" https://github.com/alessiomaffeis/vue-picture-input
->npm install --save vue-picture-input
+```
+npm install --save vue-picture-input
+```
 >import "vue-wysiwyg/dist/vueWysiwyg.css";
 >Vue.use(wysiwyg, {});
 
@@ -118,3 +135,4 @@ headers: {
  >To create a production build, run npm run build
 <!-- sau khi build xong sẽ xuất hiện 1 thư mục tên dist  -->
 -----------------------------------------------
+refer: https://github.com/bahdcasts/vue-community-blog
