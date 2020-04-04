@@ -65,8 +65,18 @@
 
 <script>
 import Axios from "axios";
+import config from '@/config';
 
 export default {
+  // beforeRouteEnter bên dưới để bảo vệ sao cho login vào ko vào đc trang login nữa mà đẩy ra trang chủ / 
+	beforeRouteEnter(to, from, next) {
+
+    if(localStorage.getItem('auth')){
+      return next({ path:'/' });
+    }
+
+    next();
+  },
 	data() {
 		return {
 			email: "",
@@ -78,7 +88,7 @@ export default {
 	methods: {
 		loginUser() {
 			this.loading = true;
-			Axios.post("https://react-blog-api.bahdcasts.com/api/auth/login", {
+			Axios.post(`${config.apiUrl}/auth/login`, {
 				email: this.email,
 				password: this.password,
 			})
